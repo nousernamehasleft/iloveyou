@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DASAR PENDEK</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      z-index: 10;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 2rem;
+      animation: fall 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+  <script>
+    function createSpam() {
+      const emoji = document.createElement('div');
+      emoji.className = 'emoji';
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.animationDuration = (2 + Math.random() * 3) + 's';
+      emoji.style.fontSize = (1 + Math.random() * 2) + 'rem';
+      emoji.innerText = '🤣🫵🏻';
+      document.body.appendChild(emoji);
+
+      setTimeout(() => emoji.remove(), 6000);
+    }
+
+    setInterval(createSpam, 200);
+  </script>
+</head>
+<body>
+  <h1>DASAR PENDEK</h1>
+</body>
+</html>
